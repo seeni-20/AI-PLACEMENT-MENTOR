@@ -1,0 +1,1 @@
+Here The HTML Files Such as about.html,features.html,index.html,login.html came under The Folder name templates then style.css and jpeg image came under the folder static.then app.py came alone these are all come under the folder name ProjectPSG
