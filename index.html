@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Placement Mentor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AI Placement Mentor</div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('features') }}">Features</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+
+            <!-- Left Content -->
+            <div class="hero-text">
+                <h1>Build Your <span>Placement Confidence</span> With AI</h1>
+                <p>
+                    Analyze your coding performance, identify weak topics,
+                    and get personalized problem recommendations powered by AI.
+                </p>
+
+                <div class="btn-group">
+                    <a href="{{ url_for('features') }}" class="btn primary">Get Started</a>
+                    <a href="{{ url_for('features') }}" class="btn secondary">View Demo</a>
+                </div>
+            </div>
+
+            <!-- App Preview Card -->
+            <div class="app-preview">
+                <h3>Your Progress</h3>
+
+                <div class="stat">
+                    <span>Total Problems</span>
+                    <strong>120</strong>
+                </div>
+
+                <div class="stat">
+                    <span>Accuracy</span>
+                    <strong>84%</strong>
+                </div>
+
+                <div class="stat">
+                    <span>Weak Topic</span>
+                    <strong>Dynamic Programming</strong>
+                </div>
+
+                <div class="stat">
+                    <span>AI Recommendation</span>
+                    <strong>3 Medium Arrays</strong>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="position: fixed;">
+        © 2026 AI Placement Mentor | Smart Coding Preparation System
+    </footer>
+
+</body>
+</html>

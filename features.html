@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <section class="features">
+
+    <style>
+        body{
+            background: linear-gradient(-45deg,#183e85,#35587f,#31285b,#302B63);
+            background-size:400% 400%;
+            animation: gradientBG 18s ease infinite;
+        }
+   .features{
+    color: white;
+    }
+
+    .features-header{
+        text-align:center;
+        margin-bottom:80px;
+    }
+
+    .features-header h2{
+        font-size:48px;
+        font-weight:800;
+        letter-spacing:-1px;
+        margin-bottom:20px;
+    }
+
+    .features-header p{
+        font-size:18px;
+        opacity:0.75;
+    }
+
+    /* Grid Layout */
+    .features-grid{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+        gap:60px;
+    }
+
+    /* Feature Card */
+    .feature-box{
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding:70px;
+        border-radius:22px;
+        backdrop-filter: blur(25px);
+        transition: all 0.4s ease;
+        position:relative;
+        overflow:hidden;
+    }
+
+    /* Moving light sweep */
+    .feature-box::before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:-100%;
+        width:100%;
+        height:100%;
+        background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.15),
+            transparent
+        );
+        transition:0.6s;
+    }
+
+    .feature-box:hover::before{
+        left:100%;
+    }
+
+    /* Hover effect */
+    .feature-box:hover{
+        transform: translateY(-15px);
+        border:1px solid rgba(0,255,255,0.5);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+    }
+
+    /* Feature Number */
+    .feature-number{
+        font-size:45px;
+        font-weight:800;
+        opacity:0.12;
+        position:absolute;
+        top:25px;
+        right:30px;
+    }
+
+    /* Title */
+    .feature-box h3{
+        font-size:22px;
+        margin-bottom:15px;
+    }
+
+    /* Description */
+    .feature-box p{
+        font-size:15px;
+        line-height:1.7;
+        opacity:0.8;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+        .features-header h2{
+            font-size:36px;
+        }
+    }
+
+    </style>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AI Placement Mentor</div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('features') }}">Features</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </nav>
+<br>
+<br>
+<br>
+    <div class="features-header">
+        <div style="animation:fadeUp 1.5s ease;">
+        <h2 style="font-size:40px;">Redefining Placement Preparation with Artificial Intelligence</h2>
+        <br>
+        <br>
+        <p>Advanced machine learning intelligence engineered to maximize placement success.</p>
+    </div>
+<br>
+<br>
+<br>
+    <div class="features-grid" style="animation:fadeUp 1.8s ease;">
+
+        <div class="feature-box">
+            <div class="feature-number">01</div>
+            <h3>Intelligent Weakness Mapping</h3>
+            <p>
+                Deep analytics identifies topic-level performance gaps using
+                pattern recognition and behavioral performance tracking.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-number">02</div>
+            <h3>Dynamic Problem Intelligence</h3>
+            <p>
+                Adaptive recommendation engine selects the most impactful
+                next coding challenge to accelerate improvement.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-number">03</div>
+            <h3>Predictive Placement Scoring</h3>
+            <p>
+                AI-driven probability model estimates interview readiness
+                with confidence scoring and performance metrics.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-number">04</div>
+            <h3>Adaptive Interview Simulator</h3>
+            <p>
+                Simulates real coding interviews with time pressure tracking,
+                AI evaluation, and detailed performance insights.
+            </p>
+        </div>
+    </div>
+    </div>
+    <br>
+</section>
+    <footer style="position: fixed;" >
+        © 2026 AI Placement Mentor | Smart Coding Preparation System
+    </footer>
+</body>
+</html>

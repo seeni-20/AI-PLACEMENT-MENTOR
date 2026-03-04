@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - AI Placement Mentor</title>
+
+    <!-- Keep SAME font -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+    <style>
+
+    body{
+    height:100vh;
+    margin:0;
+    font-family:'Inter', sans-serif;
+
+    background: linear-gradient(-45deg,#183e85,#35587f,#31285b,#302B63);
+    background-size:400% 400%;
+    animation: gradientBG 18s ease infinite;
+
+    color:white;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+        /* ===== NAVBAR ===== */
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:25px 8%;
+        }
+
+        nav h1{
+            font-size:22px;
+            font-weight:700;
+            color: #ffffff;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:30px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00f2fe;
+        }
+      
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.nav-links a{
+    margin-left:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:white;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+
+}
+nav ul li a{
+    position:relative;
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    padding-bottom:5px;
+    transition:color 0.3s ease;
+}
+
+/* Animated underline */
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0%;
+    height:2px;
+    background:#ffffff;
+    transition:width 0.4s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover{
+    color:#ffffff;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+        /* ===== MAIN SPLIT SECTION ===== */
+        .main{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:6px 8%;
+            min-height:80vh;
+        }
+
+        /* ===== LEFT CONTENT ===== */
+        .left{
+            width:50%;
+        }
+
+        .left h2{
+            font-size:60px;
+            font-weight:800;
+            margin-bottom:45px;
+            background:linear-gradient(90deg,#e5feff,#cbe7ff);
+
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .left p{
+            font-size:20px;
+            line-height:1.6;
+            opacity:0.9;
+            max-width:600px;
+        }
+
+        /* ===== RIGHT LOGIN CARD ===== */
+        .right{
+            width:40%;
+            display:flex;
+            justify-content:center;
+        }
+
+        .login-container{
+            width:100%;
+            max-width:400px;
+            padding:45px 35px;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(20px);
+            border-radius:25px;
+            border:1px solid rgba(255,255,255,0.08);
+            box-shadow:0 20px 60px rgba(0,0,0,0.6);
+            animation:fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp{
+            from{opacity:0; transform:translateY(40px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+
+        .login-container h3{
+            text-align:center;
+            margin-bottom:30px;
+            font-size:26px;
+            font-weight:700;
+        }
+
+        .login-container input{
+            width:100%;
+            padding:14px;
+            margin-bottom:18px;
+            border-radius:12px;
+            border:none;
+            outline:none;
+            background:rgba(255,255,255,0.1);
+            color:white;
+            font-size:14px;
+            transition:0.3s;
+        }
+
+        .login-container input:focus{
+            box-shadow:0 0 15px rgba(81, 93, 255, 0.6);
+            background:rgba(255,255,255,0.15);
+        }
+
+        .login-container button{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:linear-gradient(90deg,#00f2fe,#4facfe);
+            color:#0f2027;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .login-container button:hover{
+            transform:translateY(-3px);
+            box-shadow:0 10px 25px rgba(0,242,254,0.6);
+        }
+
+        .login-container p{
+            margin-top:18px;
+            font-size:14px;
+            text-align:center;
+        }
+
+        .login-container a{
+            color:#d3fdff;
+            text-decoration:none;
+        }
+
+        .login-container a:hover{
+            text-decoration:underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:1000px){
+            .main{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .left, .right{
+                width:100%;
+            }
+
+            .left h2{
+                font-size:40px;
+            }
+
+            .right{
+                margin-top:40px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1>AI Placement Mentor</h1>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('features') }}">Features</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="main" style="animation:fadeUp 1.5s ease;">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+            <h2>AI Placement Mentor</h2>
+            <p>
+                An intelligent system that analyzes skills, predicts career growth,
+                and guides students with data-driven mentorship.
+                Designed for future-ready professionals.
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE LOGIN -->
+        <div class="right">
+            <div class="login-container">
+                <h3>USER LOGIN</h3>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">ACCESS SYSTEM</button>
+                </form>
+                <p>New user? <a href="{{ url_for('register') }}">Create account</a></p>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+        <footer style="position: fixed;">
+        © 2026 AI Placement Mentor | Smart Coding Preparation System
+    </footer>
+
+</body>
+</html>

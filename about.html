@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - AI Placement Mentor</title>
+<style>
+/* ===== About Page Cinematic Style ===== */
+body {
+    margin:0;
+     height:100vh;
+    background: linear-gradient(-45deg,#183e85,#35587f,#31285b,#302B63);
+    background-size:400% 400%;
+    animation: gradientBG 18s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    
+}
+
+.about-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 100px 8%;
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-page::before,
+.about-page::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+    filter: blur(100px);
+    z-index:0;
+}
+
+.about-page::before{ top:-100px; left:-100px; }
+.about-page::after{ bottom:-100px; right:-100px; }
+
+/* Text content */
+.about-text {
+    flex:1;
+    max-width:600px;
+    z-index:1;
+}
+
+.about-text h2{
+    font-size:50px;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:20px;
+    background: linear-gradient(90deg,#00f2fe,#4facfe);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:1.8;
+    opacity:0.85;
+    margin-bottom:25px;
+}
+
+.highlight {
+    color: #00f2fe;
+    font-weight:600;
+}
+
+/* Image content */
+.about-image {
+    flex:1;
+    text-align:right;
+    z-index:1;
+}
+
+.about-image img {
+    max-width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    transition:0.5s;
+}
+
+.about-image img:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+/* Responsive: stack vertically on small screens */
+@media(max-width:900px){
+    .about-page {
+        flex-direction: column;
+        text-align:center;
+    }
+    .about-image {
+        text-align:center;
+        margin-top:40px;
+    }
+    .about-text h2 {
+        font-size:40px;
+    }
+    .about-text p {
+        font-size:16px;
+    }
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo">AI Placement Mentor</div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('features') }}">Features</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </nav>
+
+<section class="about-page" style="animation:fadeUp 1.5s ease;">
+    <!-- Left Text -->
+    <div class="about-text">
+        <h2>Redefining Placement Preparation with <span class="highlight">AI</span></h2>
+        <p>
+            <span class="highlight">AI Placement Mentor</span> is a next-generation platform designed to accelerate placement success. 
+            By analyzing your coding patterns, predicting weak areas, and providing <span class="highlight">personalized recommendations</span>, 
+            it bridges the gap between learning and real-world performance.
+        </p>
+        <p>
+            Our mission is to empower students with <span class="highlight">data-driven insights</span>, adaptive challenges, 
+            and predictive guidance — helping them prepare smarter, faster, and with confidence.
+        </p>
+    </div>
+
+    <!-- Right Image -->
+    <div class="about-image">
+        <img src="{{ url_for('static', filename='projectpsg.jpeg') }}">
+        <!-- Replace "about-image.png" with your uploaded image file -->
+    </div>
+</section>
+    <footer style="position: fixed;">
+        © 2026 AI Placement Mentor | Smart Coding Preparation System
+    </footer>
+</body>
+</html>
